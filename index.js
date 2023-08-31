@@ -1,7 +1,7 @@
 //Declaración de variables
 
 const board = document.getElementById('main-board');
-const cat = new Cat(50, 750)
+const cat = new Cat(30, 660)
 
 //Función constructora gato:
 

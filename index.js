@@ -49,7 +49,7 @@ var insertCat = function () {
 
 
 insertCat()
-const cat = new Cat(50, 630)
+const cat = new Cat(30, 630)
 var timeId = setInterval(cat.move, 20);
 
 cat.draw()

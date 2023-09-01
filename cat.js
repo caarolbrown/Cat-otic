@@ -50,23 +50,47 @@ function Cat(x, y) {
     }
 
     this.wallsCollisions = function (walls) {
-        var arrayWalls = [...walls]
-        console.log(arrayWalls)
-        arrayWalls.forEach(function (wall) {
-            if (
-                self.y + self.height >= wall.offsetTop &&
-                self.y <= wall.offsetTop + wall.offsetHeight &&
-                self.x + self.offsetLeft >= wall.offsetLeft &&
-                self.x <= wall.offsetLeft + wall.offsetWidth
-            
-            ) {
-                console.log('entra')
-                self.direction = 'none'
- 
+        for (let i = 0; i < walls.length; i++) {
+        
+            switch (this.direction) {
+                case "right":
+                    if (
+                        this.x + this.width + this.speed > walls[i].offsetLeft &&
+                        this.y + this.height > walls[i].offsetTop &&
+                        this.y < walls[i].offsetTop + walls[i].offsetHeight &&
+                        this.x < walls[i].offsetLeft + walls[i].offsetWidth
+                    ) { this.direction = "none"; 
+                        console.log(this.x, this.y)
+                        console.log(walls[i].innerText)};
+                    break;
+                case "down":
+                    if (
+                        this.y + this.height + this.speed > walls[i].offsetTop &&
+                        this.x < walls[i].offsetLeft + walls[i].offsetWidth &&
+                        this.x + this.width > walls[i].offsetLeft
+                    ) { this.direction = "none"; };
+                    break;
+                case "left":
+                    if (
+                        this.x - this.speed < walls[i].offsetLeft + walls[i].offsetWidth &&
+                        this.y + this.height > walls[i].offsetTop &&
+                        this.y < walls[i].offsetTop + walls[i].offsetHeight
+                    ) { this.direction = "none"; };
+
+                    break;
+                case "up":
+                    if (
+                        this.y - this.speed < walls[i].offsetTop + walls[i].offsetHeight &&
+                        this.x < walls[i].offsetLeft + walls[i].offsetWidth &&
+                        this.x + this.width > walls[i].offsetWidth
+                    ) { this.direction = "none"; };
+                    break;
             }
-        })
-    }
+        };
+
+    };
 }
+
 
 
 export { Cat } 

@@ -47,239 +47,101 @@
 }
 
 #wall1 {
-    margin-top: 280px;
+    top: 280px;
     position: absolute;
 }
 
 #wall2 {
-    margin-top: 210px;
-    margin-left: 200px;
+    top: 210px;
+    left: 200px;
     position: absolute;
 }
 
 #wall3 {
-    margin-top: 210px;
-    margin-left: 300px;
+    top: 210px;
+    left: 300px;
     position: absolute;
 }
 
 #wall4 {
-    margin-top: 140px;
-    margin-left: 300px;
+    top: 140px;
+    left: 300px;
     position: absolute;
 }
 
 #wall5 {
-    margin-top: 70px;
-    margin-left: 300px;
+    top: 70px;
+    left: 300px;
     position: absolute;
 }
 
 #wall6 {
-    margin-top: 0%;
-    margin-left: 300px;
+    top: 0;
+    left: 300px;
+    height: 560px;
     position: absolute;
 }
 
-#wall7 {
-    margin-top: 280px;
-    margin-left: 300px;
-    position: absolute;
-}
-
-#wall8 {
-    margin-top: 350px;
-    margin-left: 300px;
-    position: absolute;
-}
-
-#wall9 {
-    margin-top: 420px;
-    margin-left: 300px;
-    position: absolute;
-}
-
-#wall10 {
-    margin-top: 490px;
-    margin-left: 300px;
-    position: absolute;
-}
-
-#wall11 {
-    margin-top: 630px;
-    margin-left: 100px;
-    position: absolute;
-}
 
 #wall12 {
-    margin-top: 560px;
-    margin-left: 100px;
+    top: 560px;
+    left: 100px;
+    height: 140px;
     position: absolute;
 }
 
 #wall13 {
-    margin-top: 140px;
-    margin-left: 500px;
+    top: 140px;
+    left: 500px;
     position: absolute;
 }
 
 #wall14 {
-    margin-top: 140px;
-    margin-left: 600px;
+    top: 140px;
+    left: 600px;
     position: absolute;
 }
 
 #wall15 {
-    margin-top: 140px;
-    margin-left: 700px;
+    top: 140px;
+    left: 700px;
     position: absolute;
 }
 
 #wall16 {
-    margin-top: 70px;
-    margin-left: 700px;
+    top: 70px;
+    left: 700px;
     position: absolute;
 }
 
 #wall17 {
-    margin-top: 0px;
-    margin-left: 700px;
+    top: 0px;
+    left: 700px;
     position: absolute;
 }
 
 #wall18 {
-    margin-top: 280px;
-    margin-left: 500px;
-    position: absolute;
-}
-
-#wall19 {
-    margin-top: 350px;
-    margin-left: 500px;
-    position: absolute;
-}
-
-#wall20 {
-    margin-top: 420px;
-    margin-left: 500px;
-    position: absolute;
-}
-
-#wall21 {
-    margin-top: 490px;
-    margin-left: 500px;
-    position: absolute;
-}
-
-#wall22 {
-    margin-top: 560px;
-    margin-left: 500px;
-    position: absolute;
-}
-
-#wall23 {    
-    margin-top: 280px;
-    margin-left: 600px;
-    position: absolute;
-}
-
-#wall24 {
-    margin-top: 350px;
-    margin-left: 600px;
-    position: absolute;
-}
-
-#wall25 {
-    margin-top: 420px;
-    margin-left: 600px;
-    position: absolute;
-}
-
-#wall26 {
-    margin-top: 490px;
-    margin-left: 600px;
-    position: absolute;
-}
-
-#wall27 {
-    margin-top: 560px;
-    margin-left: 600px;
+    top: 280px;
+    left: 500px;
+    width: 200px;
+    height: 350px;
     position: absolute;
 }
 
 #wall28 {
-    margin-top: 280px;
-    margin-left: 800px;
+    top: 280px;
+    left: 800px;
+    height: 420px;
     position: absolute;
 }
 
-#wall29 {
-    margin-top: 350px;
-    margin-left: 800px;
-    position: absolute;
-}
-
-#wall30 {
-    margin-top: 420px;
-    margin-left: 800px;
-    position: absolute;
-}
-
-#wall31 {
-    margin-top: 490px;
-    margin-left: 800px;
-    position: absolute;
-}
-#wall32 {
-    margin-top: 560px;
-    margin-left: 800px;
-    position: absolute;
-}
-#wall33 {
-    margin-top: 630px;
-    margin-left: 800px;
-    position: absolute;
-}
 #wall34 {
-    margin-top: 0px;
-    margin-left: 1000px;
+    top: 0px;
+    left: 1000px;
+    height: 560px;
     position: absolute;
 }
-#wall35 {
-    margin-top: 70px;
-    margin-left: 1000px;
-    position: absolute;
-}
-#wall36 {
-    margin-top: 140px;
-    margin-left: 1000px;
-    position: absolute;
-}
-#wall37 {
-    margin-top: 210px;
-    margin-left: 1000px;
-    position: absolute;
-}
-#wall38 {
-    margin-top: 280px;
-    margin-left: 1000px;
-    position: absolute;
-}
-#wall39 {
-    margin-top: 350px;
-    margin-left: 1000px;
-    position: absolute;
-}
-#wall40 {
-    margin-top: 420px;
-    margin-left: 1000px;
-    position: absolute;
-}
-#wall41 {
-    margin-top: 490px;
-    margin-left: 1000px;
-    position: absolute;
-}
+
 
 #cat {
     height: 70px;

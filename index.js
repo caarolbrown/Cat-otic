@@ -1,9 +1,10 @@
 import { Cat } from './cat.js'
+// import { Dogs } from './dogs.js'
 
 //Declaración de variables
 
 const board = document.getElementById('main-board');
-
+const walls = document.getElementsByClassName('walls')
 
 
  //Deteccion de teclado:
@@ -25,9 +26,14 @@ window.addEventListener('keydown', function (e) {
         default:
         cat.direction = "none"
     }
-    cat.updatePosition()
+
+    window.addEventListener('keyup', function () {
+        cat.direction = 0;
+    })
+
     cat.draw()
     cat.move()
+    cat.wallsCollisions(walls)
 })
 
 //Insertar al gato en pantalla
@@ -43,7 +49,7 @@ var insertCat = function () {
 
 
 insertCat()
-const cat = new Cat(40, 660)
+const cat = new Cat(50, 630)
 var timeId = setInterval(cat.move, 20);
 
 cat.draw()

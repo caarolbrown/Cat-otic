@@ -1,60 +1,70 @@
 
 //Función constructora gato:
 
-function Cat(x, y, board) {
+function Cat(x, y) {
     var self = this
     this.x = x;
     this.y = y;
     this.direction = 'none';
     this.speed = 100;
+    this.height = 70;
+    this.width = 60;
     this.sprite = document.getElementById('cat');
 
-    this.updatePosition = function() {
-        console.log(this.direction)
-        switch (this.direction){
-            case 'up':
-            this.y -= 1
-            break
-            case 'left':
-            this.x -= 1
-            break
-            case 'down':
-            this.y += 1
-            break
-            case 'right':
-            this.x += 1
-            break
-        }
-        console.log(this.x)
-        console.log(this.y)
-    }
-    this.draw = function () {  
+    this.draw = function () {
         this.sprite.style.left = this.x + 'px'
         this.sprite.style.top = this.y + 'px'
     }
 
-
-
-    this.move = function() {
-
+    this.move = function () {
         switch (this.direction) {
             case 'up':
-                if (this.y < 2) {
-                   this.direction = "none"
+                if (this.y < 0) {
+                    this.direction = "none"
                 } else {
-                    this.y +=1
+                    this.y -= 15
                 }
                 break
             case 'left':
-                this.x -= 5
+                if (this.x < 0) {
+                    this.direction = "none"
+                } else {
+                    this.x -= 15
+                }
                 break
             case 'down':
-                this.y += 5
+                if (this.y > 630) {
+                    this.direction = "none"
+                } else {
+                    this.y += 15
+                }
                 break
             case 'right':
-                this.x += 5
+                if (this.x > 1140) {
+                    this.direction = 'none'
+                } else {
+                    this.x += 15
+                }
                 break
         }
+    }
+
+    this.wallsCollisions = function (walls) {
+        var arrayWalls = [...walls]
+        console.log(arrayWalls)
+        arrayWalls.forEach(function (wall) {
+            if (
+                self.y + self.height >= wall.offsetTop &&
+                self.y <= wall.offsetTop + wall.offsetHeight &&
+                self.x + self.offsetLeft >= wall.offsetLeft &&
+                self.x <= wall.offsetLeft + wall.offsetWidth
+            
+            ) {
+                console.log('entra')
+                self.direction = 'none'
+ 
+            }
+        })
     }
 }
 

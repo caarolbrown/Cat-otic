@@ -1,27 +1,28 @@
 
 //Función constructora gato:
 
-function Cat(x, y) {
+function Cat(x, y, board) {
+    var self = this
     this.x = x;
     this.y = y;
-    this.coords = [{ x: x, y: y }]
     this.direction = 'none';
     this.speed = 100;
     this.sprite = document.getElementById('cat');
 
     this.updatePosition = function() {
+        console.log(this.direction)
         switch (this.direction){
             case 'up':
-            this.y -= 5
+            this.y -= 1
             break
             case 'left':
-            this.x -= 5
+            this.x -= 1
             break
             case 'down':
-            this.y += 5
+            this.y += 1
             break
             case 'right':
-            this.x += 5
+            this.x += 1
             break
         }
         console.log(this.x)
@@ -35,10 +36,24 @@ function Cat(x, y) {
 
 
     this.move = function() {
-        var nextX = self.x + self.speed * self.direction
-        if (nextX > 0 && nextX < 700){
-            self.x = self.x + self.speed * self.direction
-            self.sprite.style.left = self.x + 'px'
+
+        switch (this.direction) {
+            case 'up':
+                if (this.y < 2) {
+                   this.direction = "none"
+                } else {
+                    this.y +=1
+                }
+                break
+            case 'left':
+                this.x -= 5
+                break
+            case 'down':
+                this.y += 5
+                break
+            case 'right':
+                this.x += 5
+                break
         }
     }
 }

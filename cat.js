@@ -6,9 +6,9 @@ function Cat(x, y) {
     this.x = x;
     this.y = y;
     this.direction = 'none';
-    this.speed = 100;
+    this.speed = 300;
     this.height = 70;
-    this.width = 60;
+    this.width = 100;
     this.sprite = document.getElementById('cat');
 
     this.draw = function () {
@@ -19,76 +19,74 @@ function Cat(x, y) {
     this.move = function () {
         switch (this.direction) {
             case 'up':
-                if (this.y < 0) {
+                if (this.y === 0) {
                     this.direction = "none"
                 } else {
-                    this.y -= 15
+                    this.y -= this.height
                 }
                 break
             case 'left':
-                if (this.x < 0) {
+                if (this.x === 0) {
                     this.direction = "none"
                 } else {
-                    this.x -= 15
+                    this.x -= this.width
                 }
                 break
             case 'down':
-                if (this.y > 630) {
+                if (this.y === 630) {
                     this.direction = "none"
                 } else {
-                    this.y += 15
+                    this.y += this.height
                 }
                 break
             case 'right':
-                if (this.x > 1140) {
+                if (this.x === 1100) {
                     this.direction = 'none'
                 } else {
-                    this.x += 15
+                    this.x += this.width
                 }
                 break
         }
     }
 
     this.wallsCollisions = function (walls) {
+console.log({offsetLeft: walls[0].offsetLeft, offsetTop: walls[0].offsetTop, offsetHeight: walls[0].offsetHeight, offsetWidth: walls[0].offsetWidth})
         for (let i = 0; i < walls.length; i++) {
-        
             switch (this.direction) {
                 case "right":
                     if (
-                        this.x + this.width + this.speed > walls[i].offsetLeft &&
-                        this.y + this.height > walls[i].offsetTop &&
-                        this.y < walls[i].offsetTop + walls[i].offsetHeight &&
-                        this.x < walls[i].offsetLeft + walls[i].offsetWidth
-                    ) { this.direction = "none"; 
-                        console.log(this.x, this.y)
-                        console.log(walls[i].innerText)};
+                        this.x + this.width === walls[i].offsetLeft && this.y === walls[i].offsetTop
+            ) {
+                        return true
+                    }
                     break;
                 case "down":
                     if (
-                        this.y + this.height + this.speed > walls[i].offsetTop &&
-                        this.x < walls[i].offsetLeft + walls[i].offsetWidth &&
-                        this.x + this.width > walls[i].offsetLeft
-                    ) { this.direction = "none"; };
+                        this.y + this.height === walls[i].offsetTop && this.x === walls[i].offsetLeft
+                    ) {
+                        return true
+                    }
                     break;
                 case "left":
                     if (
-                        this.x - this.speed < walls[i].offsetLeft + walls[i].offsetWidth &&
-                        this.y + this.height > walls[i].offsetTop &&
-                        this.y < walls[i].offsetTop + walls[i].offsetHeight
-                    ) { this.direction = "none"; };
-
+                        this.x - this.width === walls[i].offsetLeft && this.y === walls[i].offsetTop
+                    ) { 
+                        return true
+                    }
                     break;
                 case "up":
                     if (
-                        this.y - this.speed < walls[i].offsetTop + walls[i].offsetHeight &&
-                        this.x < walls[i].offsetLeft + walls[i].offsetWidth &&
-                        this.x + this.width > walls[i].offsetWidth
-                    ) { this.direction = "none"; };
+                        this.y - this.height === walls[i].offsetTop && this.x === walls[i].offsetLeft
+                    ) { 
+                        console.log({x: this.x, y: this.y, width: this.width, height: this.height, speed: this.speed, offsetLeft: walls[i].offsetLeft, offsetTop: walls[i].offsetTop, offsetHeight: walls[i].offsetHeight, offsetWidth: walls[i].offsetWidth})
+                        return true
+                     }
                     break;
+                
             }
-        };
-
-    };
+        } 
+        return false 
+    }
 }
 
 

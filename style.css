@@ -30,13 +30,14 @@
 
 #cat {
     height: 70px;
-    width: 60px;
+    width: 100px;
     position: absolute;
-    background-image: url(./source/img/michi\ juego.png);
+    background-color: chocolate;
+   /*background-image: url(./source/img/michi\ juego.png);
     background-repeat: no-repeat;
     background-size: contain;
     border: solid 1px black;
-    background-position: center;
+    background-position: center;*/
 }
 
 .walls {
@@ -47,109 +48,236 @@
 }
 
 #wall1 {
-    top: 280px;
+    margin-top: 280px;
     position: absolute;
 }
 
 #wall2 {
-    top: 210px;
-    left: 200px;
+    margin-top: 210px;
+    margin-left: 200px;
     position: absolute;
 }
 
 #wall3 {
-    top: 210px;
-    left: 300px;
+    margin-top: 210px;
+    margin-left: 300px;
     position: absolute;
 }
 
 #wall4 {
-    top: 140px;
-    left: 300px;
+    margin-top: 140px;
+    margin-left: 300px;
     position: absolute;
 }
 
 #wall5 {
-    top: 70px;
-    left: 300px;
+    margin-top: 70px;
+    margin-left: 300px;
     position: absolute;
 }
 
 #wall6 {
-    top: 0;
-    left: 300px;
-    height: 560px;
+    margin-top: 0%;
+    margin-left: 300px;
     position: absolute;
 }
 
+#wall7 {
+    margin-top: 280px;
+    margin-left: 300px;
+    position: absolute;
+}
+
+#wall8 {
+    margin-top: 350px;
+    margin-left: 300px;
+    position: absolute;
+}
+
+#wall9 {
+    margin-top: 420px;
+    margin-left: 300px;
+    position: absolute;
+}
+
+#wall10 {
+    margin-top: 490px;
+    margin-left: 300px;
+    position: absolute;
+}
+
+#wall11 {
+    margin-top: 630px;
+    margin-left: 100px;
+    position: absolute;
+}
 
 #wall12 {
-    top: 560px;
-    left: 100px;
-    height: 140px;
+    margin-top: 560px;
+    margin-left: 100px;
     position: absolute;
 }
 
 #wall13 {
-    top: 140px;
-    left: 500px;
+    margin-top: 140px;
+    margin-left: 500px;
     position: absolute;
 }
 
 #wall14 {
-    top: 140px;
-    left: 600px;
+    margin-top: 140px;
+    margin-left: 600px;
     position: absolute;
 }
 
 #wall15 {
-    top: 140px;
-    left: 700px;
+    margin-top: 140px;
+    margin-left: 700px;
     position: absolute;
 }
 
 #wall16 {
-    top: 70px;
-    left: 700px;
+    margin-top: 70px;
+    margin-left: 700px;
     position: absolute;
 }
 
 #wall17 {
-    top: 0px;
-    left: 700px;
+    margin-top: 0px;
+    margin-left: 700px;
     position: absolute;
 }
 
 #wall18 {
-    top: 280px;
-    left: 500px;
-    width: 200px;
-    height: 350px;
+    margin-top: 280px;
+    margin-left: 500px;
+    position: absolute;
+}
+
+#wall19 {
+    margin-top: 350px;
+    margin-left: 500px;
+    position: absolute;
+}
+
+#wall20 {
+    margin-top: 420px;
+    margin-left: 500px;
+    position: absolute;
+}
+
+#wall21 {
+    margin-top: 490px;
+    margin-left: 500px;
+    position: absolute;
+}
+
+#wall22 {
+    margin-top: 560px;
+    margin-left: 500px;
+    position: absolute;
+}
+
+#wall23 {    
+    margin-top: 280px;
+    margin-left: 600px;
+    position: absolute;
+}
+
+#wall24 {
+    margin-top: 350px;
+    margin-left: 600px;
+    position: absolute;
+}
+
+#wall25 {
+    margin-top: 420px;
+    margin-left: 600px;
+    position: absolute;
+}
+
+#wall26 {
+    margin-top: 490px;
+    margin-left: 600px;
+    position: absolute;
+}
+
+#wall27 {
+    margin-top: 560px;
+    margin-left: 600px;
     position: absolute;
 }
 
 #wall28 {
-    top: 280px;
-    left: 800px;
-    height: 420px;
+    margin-top: 280px;
+    margin-left: 800px;
     position: absolute;
 }
 
+#wall29 {
+    margin-top: 350px;
+    margin-left: 800px;
+    position: absolute;
+}
+
+#wall30 {
+    margin-top: 420px;
+    margin-left: 800px;
+    position: absolute;
+}
+
+#wall31 {
+    margin-top: 490px;
+    margin-left: 800px;
+    position: absolute;
+}
+#wall32 {
+    margin-top: 560px;
+    margin-left: 800px;
+    position: absolute;
+}
+#wall33 {
+    margin-top: 630px;
+    margin-left: 800px;
+    position: absolute;
+}
 #wall34 {
-    top: 0px;
-    left: 1000px;
-    height: 560px;
+    margin-top: 0px;
+    margin-left: 1000px;
     position: absolute;
 }
-
-
-#cat {
-    height: 70px;
-    width: 60px;
+#wall35 {
+    margin-top: 70px;
+    margin-left: 1000px;
     position: absolute;
-    background-image: url(./source/img/michi\ juego.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    /**border: solid 1px black;**/
-    background-position: center;
+}
+#wall36 {
+    margin-top: 140px;
+    margin-left: 1000px;
+    position: absolute;
+}
+#wall37 {
+    margin-top: 210px;
+    margin-left: 1000px;
+    position: absolute;
+}
+#wall38 {
+    margin-top: 280px;
+    margin-left: 1000px;
+    position: absolute;
+}
+#wall39 {
+    margin-top: 350px;
+    margin-left: 1000px;
+    position: absolute;
+}
+#wall40 {
+    margin-top: 420px;
+    margin-left: 1000px;
+    position: absolute;
+}
+#wall41 {
+    margin-top: 490px;
+    margin-left: 1000px;
+    position: absolute;
 }

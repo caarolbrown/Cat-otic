@@ -26,15 +26,16 @@ window.addEventListener('keydown', function (e) {
         default:
         cat.direction = "none"
     }
+    console.log(e.key)
 
-    window.addEventListener('keyup', function () {
-        cat.direction = 0;
-    })
-
-    cat.draw()
-    cat.move()
-    cat.wallsCollisions(walls)
+    if (cat.wallsCollisions(walls)){
+        cat.direction = 'none'
+    } else {
+        cat.move()
+        cat.draw()
+    }
 })
+
 
 //Insertar al gato en pantalla
 
@@ -49,7 +50,7 @@ var insertCat = function () {
 
 
 insertCat()
-const cat = new Cat(30, 630)
+const cat = new Cat(0, 630)
 var timeId = setInterval(cat.move, 20);
 
 cat.draw()

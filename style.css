@@ -33,11 +33,18 @@
     width: 100px;
     position: absolute;
     background-color: chocolate;
-   /*background-image: url(./source/img/michi\ juego.png);
+    background-image: url(./source/img/michi\ juego.png);
     background-repeat: no-repeat;
     background-size: contain;
-    border: solid 1px black;
-    background-position: center;*/
+    /*border: solid 1px black;*/
+    background-position: center;
+}
+
+#bullets {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background-color: yellow;
 }
 
 .walls {

@@ -46,6 +46,15 @@ var insertCat = function () {
    
 }
 
+// Insert las balas en pantalla
+
+var insertBullets = function () {
+    var newBullet = document.createElement('div');
+    newBullet.setAttribute('id', 'bullets');
+    board.appendChild(newBullet)
+}
+
+
 
 
 
@@ -53,7 +62,12 @@ insertCat()
 const cat = new Cat(0, 630)
 var timeId = setInterval(cat.move, 20);
 
+insertBullets(
+    
+)
+
 cat.draw()
+
 
 
 

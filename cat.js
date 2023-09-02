@@ -77,7 +77,7 @@ console.log({offsetLeft: walls[0].offsetLeft, offsetTop: walls[0].offsetTop, off
                     if (
                         this.y - this.height === walls[i].offsetTop && this.x === walls[i].offsetLeft
                     ) { 
-                        console.log({x: this.x, y: this.y, width: this.width, height: this.height, speed: this.speed, offsetLeft: walls[i].offsetLeft, offsetTop: walls[i].offsetTop, offsetHeight: walls[i].offsetHeight, offsetWidth: walls[i].offsetWidth})
+                        //console.log({x: this.x, y: this.y, width: this.width, height: this.height, speed: this.speed, offsetLeft: walls[i].offsetLeft, offsetTop: walls[i].offsetTop, offsetHeight: walls[i].offsetHeight, offsetWidth: walls[i].offsetWidth})
                         return true
                      }
                     break;

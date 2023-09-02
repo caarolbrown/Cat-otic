@@ -1,4 +1,5 @@
 import { Cat } from './cat.js'
+import { Bullet } from './bullets.js';
 // import { Dogs } from './dogs.js'
 
 //Declaración de variables
@@ -26,7 +27,7 @@ window.addEventListener('keydown', function (e) {
         default:
         cat.direction = "none"
     }
-    console.log(e.key)
+    //console.log(e.key)
 
     if (cat.wallsCollisions(walls)){
         cat.direction = 'none'
@@ -48,25 +49,25 @@ var insertCat = function () {
 
 // Insert las balas en pantalla
 
-var insertBullets = function () {
+var insertBullet = function () {
     var newBullet = document.createElement('div');
-    newBullet.setAttribute('id', 'bullets');
+    newBullet.setAttribute('id', 'bullet');
     board.appendChild(newBullet)
 }
 
 
 
-
-
 insertCat()
 const cat = new Cat(0, 630)
-var timeId = setInterval(cat.move, 20);
+var timerId = setInterval(cat.move, 20);
 
-insertBullets(
-    
-)
+insertBullet()
+const bullet = new Bullet (1045, 560)
 
 cat.draw()
+bullet.draw()
+bullet.move()
+bullet.removeBullet()
 
 
 

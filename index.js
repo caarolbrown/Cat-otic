@@ -8,6 +8,7 @@ function Game() {
     this.board = document.getElementById('main-board');
     this.walls = document.querySelectorAll('.walls');
     this.cat = new Cat(30, 630);
+    this.limits = //[{bullet1 = left: el valor, right: el valor... igual con todos los lados}]
     this.bullets = [];
 
     this.insertCat = function () {
@@ -20,8 +21,8 @@ function Game() {
         console.log(this.cat.sprite)
     }
 
-    this.insertBullet = function (x, y){
-        let bullet = new Bullet(x, y)
+    this.insertBullet = function (x, y, direction, posInit, posFin, speed){
+        let bullet = new Bullet(x, y, direction, posInit, posFin, speed)
         let newBullet = document.createElement('div');
         newBullet.classList.add('bullet');
         newBullet.style.left = x + 'px';
@@ -33,20 +34,15 @@ function Game() {
 
     this.gameStart = function () {
         this.insertCat()
-        this.insertBullet(1045, 480)
-        this.insertBullet(290, 50)
-        this.insertBullet(290, 140)
-        this.insertBullet(290, 330)
-        this.insertBullet(290, 420)
-        this.insertBullet(690, 70)
-        for (let i = 0; i < this.bullets.length; i++) {
-            this.bullets[i].move()
-        }
-        //this.insertDog()
+        this.insertBullet(1045, 550, 'vertical', 480, 690, 8)
+        this.insertBullet(0, 50, 'horizontal', 0, 290, 6)
+        this.insertBullet(0, 140, 'horizontal', 0, 290, 5)
+        this.insertBullet(0, 440, 'horizontal', 0, 290, 10)
+        this.insertBullet(400, 70, 'horizontal', 400, 690, 6)
         var timerId = setInterval(this.loop, 20)
-    }
+        }
 
-    this.wallsCollisions = function (player) {
+    this.wallsCollisions = function () {
         for (let i = 0; i < this.walls.length; i++) {
             switch (this.cat.direction) {
                 case 'right':
@@ -95,12 +91,14 @@ function Game() {
                     };
                     break;
             }
-        };
+        }
     }
 
     this.loop = function () {
         game.wallsCollisions(this.cat)
-        //game.wallsCollisions(this.dog)
+        console.log(game.bullets)
+        for (let i = 0; i < game.bullets.length; i++) {
+            game.bullets[i].move()
         if (game.cat.direction != 'none') {
             game.cat.move()
             game.cat.draw()
@@ -108,7 +106,7 @@ function Game() {
         game.cat.direction = 'none'
     }
 }
-
+}
 var game = new Game()
 game.gameStart()
 
@@ -131,12 +129,3 @@ window.addEventListener('keydown', function (e) {
             game.cat.direction = "none"
     }
 })
-
-
-
-
-
-
-
-
-

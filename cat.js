@@ -1,11 +1,12 @@
-//FunciÃ³n constructora gato:
+
+//Funcion constructora gato:
 
 function Cat(x, y) {
     var self = this
     this.x = x;
     this.y = y;
     this.direction = 'none';
-    this.speed = 10;
+    this.speed = 20;
     this.height = 70;
     this.width = 60;
     this.sprite
@@ -19,21 +20,21 @@ function Cat(x, y) {
         switch (this.direction) {
             case 'up':
                 if (this.y - this.speed <= 0) {
-                    this.direction = "none"
+                    this.direction = 'none'
                 } else {
                     this.y -= this.speed
                 }
                 break
             case 'left':
                 if (this.x - this.speed <= 0) {
-                    this.direction = "none"
+                    this.direction = 'none'
                 } else {
                     this.x -= this.speed
                 }
                 break
             case 'down':
                 if (this.y + this.speed >= 630) {
-                    this.direction = "none"
+                    this.direction = 'none'
                 } else {
                     this.y += this.speed
                 }

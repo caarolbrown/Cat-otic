@@ -39,6 +39,17 @@
     background-position: center;
 }
 
+#dog {
+    height: 70px;
+    width: 60px;
+    position: absolute;
+    background-image: url(./source/img/michi\ juego.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: solid 1px black;
+    background-position: center;
+}
+
 .walls {
     color: white;
     background-color: black;

@@ -1,7 +1,7 @@
 import { Cat } from './cat.js'
 import { Bullet } from './bullet.js'
 //import { Dogs } from './dogs.js'
-import { Wool } from './wool.js'
+import { Tangle } from './tangle.js'
 
 //Declaracion de variables
 function Game() {
@@ -10,6 +10,7 @@ function Game() {
     this.walls = document.querySelectorAll('.walls');
     this.cat = new Cat(30, 630);
     this.bullets = [];
+    this.tangle 
 
     this.insertCat = function () {
         let newCat = document.createElement('div');
@@ -18,7 +19,7 @@ function Game() {
         newCat.style.top = this.cat.y + 'px';
         this.board.appendChild(newCat);
         this.cat.sprite = document.getElementById('cat')
-        console.log(this.cat.sprite)
+        // console.log(this.cat.sprite)
     }
 
     this.insertBullet = function (x, y, direction, posInit, posFin, speed){
@@ -32,24 +33,27 @@ function Game() {
         this.bullets.push(bullet);
     }
 
-    this.insertWool = function (x, y){
-        let newWool = document.createElement('div');
-        newWool.classList.add('wool');
-        newWool.style.left = x + 'px';
-        newWool.style.top = y + 'px';
-        this.board.appendChild(newWool);
+    this.insertTangle = function (x, y){
+        this.tangle = new Tangle(x, y)
+        let newTangle = document.createElement('div');
+        newTangle.classList.add('tangle');
+        newTangle.style.left = x + 'px';
+        newTangle.style.top = y + 'px';
+        this.tangle.sprite = newTangle
+        this.board.appendChild(newTangle);
     }
 
     this.gameStart = function () {
         this.insertCat()
-        this.insertWool(1125, 10)
+        this.insertTangle(1125, 30)
+        // this.insertTangle(1125, 10)
         this.insertBullet(1045, 550, 'vertical', 480, 690, 8)
         this.insertBullet(0, 50, 'horizontal', 0, 290, 6)
         this.insertBullet(0, 140, 'horizontal', 0, 290, 5)
         this.insertBullet(0, 440, 'horizontal', 0, 290, 10)
         this.insertBullet(400, 70, 'horizontal', 400, 690, 6)
         var timerId = setInterval(this.loop, 20)
-        }
+    }
 
     this.wallsCollisions = function () {
         for (let i = 0; i < this.walls.length; i++) {
@@ -61,7 +65,7 @@ function Game() {
                         this.cat.y + this.cat.height >= this.walls[i].offsetTop &&
                         this.cat.y <= this.walls[i].offsetTop + this.walls[i].offsetHeight
                     ) {
-                        //console.log(this.walls[i].innerHTML)
+                        // console.log(this.walls[i].innerHTML)
                         this.cat.direction = 'none'
                     };
                     break;
@@ -103,9 +107,32 @@ function Game() {
         }
     }
 
+    this.tanglesCollitions = function () {
+        if (this.cat.x + this.cat.width  >= this.tangle.x &&
+            this.cat.x <= this.tangle.x + this.tangle.width &&
+            this.cat.y + this.cat.height >= this.tangle.y &&
+            this.cat.y <= this.tangle.y + this.tangle.height) {
+                if (this.tangle.counter == 0){
+                    let newScore = document.getElementById('div1n');
+                    newScore.classList.remove('tanglesdiv');
+                    this.tangle.counter++;
+                    this.tangle.x = 20;
+                    this.tangle.y = 30;
+                }   else if (this.tangle.counter == 1){
+                    let newScore = document.getElementById('div2n');
+                    newScore.classList.remove('tanglesdiv');
+                    this.tangle.counter++;
+                    this.tangle.x = 500;
+                    this.tangle.y = 50;
+                }
+            }
+    }
+
     this.loop = function () {
         game.wallsCollisions(this.cat)
-        console.log(game.bullets)
+        game.tanglesCollitions(this.cat)
+        game.tangle.draw()
+        // console.log(game.bullets)
         for (let i = 0; i < game.bullets.length; i++) {
             game.bullets[i].move()
         if (game.cat.direction != 'none') {
@@ -113,11 +140,12 @@ function Game() {
             game.cat.draw()
         }
         game.cat.direction = 'none'
+        }
     }
-}
 }
 var game = new Game()
 game.gameStart()
+
 
 //Deteccion de teclado:
 window.addEventListener('keydown', function (e) {

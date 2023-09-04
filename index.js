@@ -46,7 +46,6 @@ function Game() {
     this.gameStart = function () {
         this.insertCat()
         this.insertTangle(1125, 30)
-        // this.insertTangle(1125, 10)
         this.insertBullet(1045, 550, 'vertical', 480, 690, 8)
         this.insertBullet(0, 50, 'horizontal', 0, 290, 6)
         this.insertBullet(0, 140, 'horizontal', 0, 290, 5)
@@ -107,7 +106,7 @@ function Game() {
         }
     }
 
-    this.tanglesCollitions = function () {
+    this.tanglesCollisions = function () {
         if (this.cat.x + this.cat.width  >= this.tangle.x &&
             this.cat.x <= this.tangle.x + this.tangle.width &&
             this.cat.y + this.cat.height >= this.tangle.y &&
@@ -130,7 +129,7 @@ function Game() {
 
     this.loop = function () {
         game.wallsCollisions(this.cat)
-        game.tanglesCollitions(this.cat)
+        game.tanglesCollisions(this.cat)
         game.tangle.draw()
         // console.log(game.bullets)
         for (let i = 0; i < game.bullets.length; i++) {

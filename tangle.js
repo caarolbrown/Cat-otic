@@ -3,8 +3,9 @@ function Tangle(x, y) {
     this.y = y;
     this.height = 50;
     this.width = 50;
-    this.sprite;
     this.counter = 0;
+    this.sprite;
+
 
     this.draw = function (){
         this.sprite.style.left = this.x + 'px';

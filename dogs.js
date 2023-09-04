@@ -1,13 +1,12 @@
 //Funcion constructora del perro
-
 function Dog(x, y, moveType, posInit, posFin, speed) {
     var self = this
-    this.x = x;
-    this.y = y;
-    this.height = 70;
-    this.width = 60;
+    this.x = x
+    this.y = y
+    this.height = 70
+    this.width = 60
     this.sprite
-    this.speed = speed;
+    this.speed = speed
     this.direction = (moveType == 'horizontal') ? 'right' : 'down'
     this.moveType = moveType
     this.posInit = posInit

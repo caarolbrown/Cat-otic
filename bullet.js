@@ -2,11 +2,11 @@
 
 function Bullet(x, y, direction, posInit, posFin, speed) {
   var self = this
-  this.x = x;
-  this.y = y;
+  this.x = x
+  this.y = y
   this.height = 10
   this.width = 10
-  this.speed = speed;
+  this.speed = speed
   this.direction = direction
   this.posInit = posInit
   this.posFin = posFin
@@ -26,10 +26,7 @@ function Bullet(x, y, direction, posInit, posFin, speed) {
         self.y = posInit
       }
     }
-
   }
-  //this.timerId = setInterval(this.move, 100)
 }
-
 
 export { Bullet }

@@ -4,7 +4,7 @@ function Dog(x, y, moveType, posInit, posFin, speed) {
     this.x = x
     this.y = y
     this.height = 70
-    this.width = 60
+    this.width = 45
     this.sprite
     this.speed = speed
     this.direction = (moveType == 'horizontal') ? 'right' : 'down'

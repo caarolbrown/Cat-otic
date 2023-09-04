@@ -64,12 +64,12 @@ function Game() {
         this.insertDog(0, 470, 'horizontal', 0, 300, 1)
         this.insertDog(420, 210, 'horizontal', 420, 800, 2)
         this.insertDog(900, 0, 'vertical', 0, 280, 2)
-        this.insertBullet(1045, 550, 'vertical', 480, 690, 4)
-        this.insertBullet(290, 50, 'horizontal', 0, 290, 2)
-        this.insertBullet(0, 140, 'horizontal', 0, 290, 3)
-        this.insertBullet(0, 400, 'horizontal', 0, 290, 2)
-        this.insertBullet(400, 70, 'horizontal', 400, 690, 3)
-        this.insertTangle(1125, 30)
+        this.insertBullet(1045, 550, 'vertical', 480, 690, 1)
+        this.insertBullet(0, 50, 'horizontal', 0, 280, 1)
+        this.insertBullet(0, 140, 'horizontal', 0, 280, 1)
+        this.insertBullet(0, 375, 'horizontal', 0, 280, 1)
+        this.insertBullet(400, 70, 'horizontal', 400, 680, 1)
+        this.insertTangle(1115, 30)
         var timerId = setInterval(this.loop, 20)
     }
 
@@ -95,6 +95,7 @@ function Game() {
                         this.cat.x + this.cat.width >= this.walls[i].offsetLeft
                     ) {
                         this.cat.direction = 'none'
+                        console.log(this.walls[i])
                     };
                     break;
                 case 'left':
@@ -139,6 +140,12 @@ function Game() {
                 this.tangle.counter++
                 this.tangle.x = 500
                 this.tangle.y = 50
+            } else if (this.tangle.counter == 2) {
+                let newScore = document.getElementById('div3n')
+                newScore.classList.remove('tanglesdiv')
+                this.tangle.counter++
+                this.tangle.x = 20
+                this.tangle.y = 690
             }
         }
     }
@@ -162,7 +169,6 @@ function Game() {
                 this.cat.x <= this.dogs[i].x + this.dogs[i].width &&
                 this.cat.y + this.cat.height >= this.dogs[i].y &&
                 this.cat.y <= this.dogs[i].y + this.dogs[i].height) {
-                console.log('colisiondog')
                 alert('Game Over')
             }
         }
@@ -193,6 +199,7 @@ function Game() {
 
 var game = new Game()
 game.gameStart()
+//hacer evento del clic del boton 
 
 //Deteccion de teclado:
 window.addEventListener('keydown', function (e) {

@@ -23,7 +23,8 @@
 }
 
 #main-board {
-    background-color: grey;
+    background-color: pink;
+    /*rgb(230, 226, 226)*/
     display: flex;
     height: 700px;
     width: 1200px;
@@ -52,23 +53,28 @@
     background-image: url(./source/img/perrito.png);
     background-repeat: no-repeat;
     background-size: contain;
-    /*border: solid 1px black;*/
+    border: solid 1px black;
     background-position: center;
 }
 
 .bullet {
-    height: 10px;
-    width: 10px;
+    height: 20px;
+    width: 20px;
     position: absolute;
-    background-color: yellow;
-    /*background-image: url(./source/img/mouse.png);*/
+    /*border: solid 1px black;*/
+    background-image: url(./source/img/HiPaint_1693838056923.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .tangle {
     height: 50px;
     width: 50px;
     position: absolute;
-    background-color: blueviolet;
+    /*background-color: blueviolet;*/
+    background-image: url(./source/img/HiPaint_1693830160524.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .tanglesdiv {
@@ -78,30 +84,38 @@
 #div1n {
     height: 40px;
     width: 40px;
-    background-color: blueviolet;
+    background-image: url(./source/img/HiPaint_1693830160524.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #div2n {
     height: 40px;
     width: 40px;
-    background-color: blueviolet;
+    background-image: url(./source/img/HiPaint_1693830160524.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #div3n {
     height: 40px;
     width: 40px;
-    background-color: blueviolet;
+    background-image: url(./source/img/HiPaint_1693830160524.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #div4n {
     height: 40px;
     width: 40px;
-    background-color: blueviolet;
+    background-image: url(./source/img/HiPaint_1693830160524.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .walls {
     color: white;
-    background-color: black;
+    background-color:black;
     height: 70px;
     width: 100px;
 }
@@ -125,8 +139,8 @@
 }
 
 #wall4 {
-    margin-top: 560px;
-    margin-left: 100px;
+    top: 560px;
+    left: 100px;
     height: 140px;
     position: absolute;
 }

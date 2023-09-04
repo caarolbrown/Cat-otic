@@ -7,8 +7,8 @@ function Cat(x, y) {
     this.y = y
     this.direction = 'none'
     this.speed = 10
-    this.height = 70
-    this.width = 60
+    this.height = 50
+    this.width = 35
     this.sprite
 
     this.draw = function () {

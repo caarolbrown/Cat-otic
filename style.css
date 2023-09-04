@@ -12,7 +12,6 @@
 }
 
 .box {
-
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -20,6 +19,13 @@
     border: solid pink;
     height: 50px;
     width: 250px;
+}
+
+#container{
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 #main-board {
@@ -30,8 +36,35 @@
     width: 1200px;
     margin: 0 auto;
     margin-top: 35px;
-    position: relative;
+    position: absolute;
     border: 4px solid;
+    z-index: 0;
+}
+
+#init {
+    background-image: url(./source/img/init.png);
+    height: 700px;
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 35px;
+    border: 4px solid;
+    position: absolute;
+    z-index: 1;
+}
+.h{
+    display: none;
+}
+
+#buttons{
+    margin-top: 310px;
+    margin-left: 220px;
+}
+
+.button{
+    height: 50px;
+    width: 185px;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
 #cat {
@@ -62,7 +95,7 @@
     width: 20px;
     position: absolute;
     /*border: solid 1px black;*/
-    background-image: url(./source/img/HiPaint_1693838056923.png);
+    background-image: url(./source/img/ratoncin.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -72,7 +105,7 @@
     width: 50px;
     position: absolute;
     /*background-color: blueviolet;*/
-    background-image: url(./source/img/HiPaint_1693830160524.png);
+    background-image: url(./source/img/pecesin.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -84,7 +117,7 @@
 #div1n {
     height: 40px;
     width: 40px;
-    background-image: url(./source/img/HiPaint_1693830160524.png);
+    background-image: url(./source/img/pecesin.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -92,7 +125,7 @@
 #div2n {
     height: 40px;
     width: 40px;
-    background-image: url(./source/img/HiPaint_1693830160524.png);
+    background-image: url(./source/img/pecesin.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -100,7 +133,7 @@
 #div3n {
     height: 40px;
     width: 40px;
-    background-image: url(./source/img/HiPaint_1693830160524.png);
+    background-image: url(./source/img/pecesin.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -108,7 +141,7 @@
 #div4n {
     height: 40px;
     width: 40px;
-    background-image: url(./source/img/HiPaint_1693830160524.png);
+    background-image: url(./source/img/pecesin.png);
     background-repeat: no-repeat;
     background-size: contain;
 }

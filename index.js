@@ -157,7 +157,7 @@ function Game() {
                 this.cat.x <= this.bullets[i].x + this.bullets[i].width &&
                 this.cat.y + this.cat.height >= this.bullets[i].y &&
                 this.cat.y <= this.bullets[i].y + this.bullets[i].height) {
-                alert('Game Over')
+                //alert('Game Over')
             }
         }
     }
@@ -169,7 +169,7 @@ function Game() {
                 this.cat.x <= this.dogs[i].x + this.dogs[i].width &&
                 this.cat.y + this.cat.height >= this.dogs[i].y &&
                 this.cat.y <= this.dogs[i].y + this.dogs[i].height) {
-                alert('Game Over')
+                //alert('Game Over')
             }
         }
     }
@@ -200,7 +200,14 @@ function Game() {
 var game = new Game()
 game.gameStart()
 //hacer evento del clic del boton 
-
+function preGame() {
+    var start = document.getElementById('button_start')
+    var iniciar = document.getElementById('init')
+    start.addEventListener('click', function(){
+        iniciar.classList.add('h');
+    })
+}
+preGame()
 //Deteccion de teclado:
 window.addEventListener('keydown', function (e) {
     switch (e.key) {

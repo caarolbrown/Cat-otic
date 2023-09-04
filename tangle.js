@@ -2,7 +2,10 @@
 
 function Tangle (x, y) {
     this.x = x;
-    this.y = y
+    this.y = y;
+    this.height = 50;
+    this.width = 50;
+    this.counter = 0;
     this.sprite 
 
     this.draw = function () {

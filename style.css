@@ -12,7 +12,12 @@
 }
 
 .box {
-    background-color: pink;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border: solid pink;
     height: 50px;
     width: 250px;
 }
@@ -47,21 +52,50 @@
     background-image: url(./source/img/perrito.png);
     background-repeat: no-repeat;
     background-size: contain;
-    border: solid 1px black;
+    /*border: solid 1px black;*/
     background-position: center;
 }
 
 .bullet {
-    height:10px;
+    height: 10px;
     width: 10px;
     position: absolute;
     background-color: yellow;
     /*background-image: url(./source/img/mouse.png);*/
 }
 
-.wool {
+.tangle {
     height: 50px;
     width: 50px;
+    position: absolute;
+    background-color: blueviolet;
+}
+
+.tanglesdiv {
+    display: none;
+}
+
+#div1n {
+    height: 40px;
+    width: 40px;
+    background-color: blueviolet;
+}
+
+#div2n {
+    height: 40px;
+    width: 40px;
+    background-color: blueviolet;
+}
+
+#div3n {
+    height: 40px;
+    width: 40px;
+    background-color: blueviolet;
+}
+
+#div4n {
+    height: 40px;
+    width: 40px;
     background-color: blueviolet;
 }
 
@@ -114,15 +148,15 @@
 #wall7 {
     top: 300px;
     left: 500px;
-    height: 350px;
+    height: 310px;
     width: 200px;
     position: absolute;
 }
 
 #wall8 {
-    top: 280px;
+    top: 300px;
     left: 800px;
-    height: 420px;
+    height: 400px;
     position: absolute;
 }
 

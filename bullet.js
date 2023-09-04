@@ -4,6 +4,8 @@ function Bullet(x, y, direction, posInit, posFin, speed) {
   var self = this
   this.x = x;
   this.y = y;
+  this.height = 10
+  this.width = 10
   this.speed = speed;
   this.direction = direction
   this.posInit = posInit

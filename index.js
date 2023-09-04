@@ -12,7 +12,7 @@ function Game() {
     this.cat = new Cat(20, 630);
     this.dogs = []
     this.bullets = []
-    this.tangle = []
+    this.tangle
 
     this.insertCat = function () {
         let newCat = document.createElement('div')
@@ -46,7 +46,7 @@ function Game() {
         this.bullets.push(bullet)
     }
 
-    this.insertTangle = function (x, y){
+    this.insertTangle = function (x, y) {
         this.tangle = new Tangle(x, y)
         let newTangle = document.createElement('div');
         newTangle.classList.add('tangle');
@@ -58,14 +58,15 @@ function Game() {
 
     this.gameStart = function () {
         this.insertCat()
-        this.insertDog(0, 430, 'horizontal', 0, 300, 1)
+        this.insertDog(0, 470, 'horizontal', 0, 300, 1)
         this.insertDog(420, 210, 'horizontal', 420, 800, 2)
         this.insertDog(900, 0, 'vertical', 0, 280, 2)
-        this.insertBullet(1045, 550, 'vertical', 480, 690, 6)
+        this.insertBullet(1045, 550, 'vertical', 480, 690, 4)
         this.insertBullet(290, 50, 'horizontal', 0, 290, 2)
         this.insertBullet(0, 140, 'horizontal', 0, 290, 3)
         this.insertBullet(0, 400, 'horizontal', 0, 290, 2)
         this.insertBullet(400, 70, 'horizontal', 400, 690, 3)
+        this.insertTangle(1125, 30)
         var timerId = setInterval(this.loop, 20)
     }
 
@@ -121,88 +122,62 @@ function Game() {
         }
     }
 
-    this.tanglesCollitions = function () {
-        if (this.cat.x + this.cat.width  >= this.tangle.x &&
+    this.tanglesCollisions = function () {
+        if (this.cat.x + this.cat.width >= this.tangle.x &&
             this.cat.x <= this.tangle.x + this.tangle.width &&
             this.cat.y + this.cat.height >= this.tangle.y &&
             this.cat.y <= this.tangle.y + this.tangle.height) {
-                if (this.tangle.counter == 0){
-                    let newScore = document.getElementById('div1n');
-                    newScore.classList.remove('tanglesdiv');
-                    this.tangle.counter++;
-                    this.tangle.x = 20;
-                    this.tangle.y = 30;
-                }   else if (this.tangle.counter == 1){
-                    let newScore = document.getElementById('div2n');
-                    newScore.classList.remove('tanglesdiv');
-                    this.tangle.counter++;
-                    this.tangle.x = 500;
-                    this.tangle.y = 50;
-                }
-            }
-    }
-
-    /*this.bulletsCollisions = function () {
-        for (let i = 0; i < this.bullets.length; i++) {
-            switch (this.cat.direction) {
-                case 'right':
-                    if (
-                        this.cat.x + this.cat.width + this.cat.speed >= this.bullets[i].offsetLeft &&
-                        this.cat.x <= this.bullets[i].offsetLeft + this.bullets[i].offsetWidth &&
-                        this.cat.y + this.cat.height >= this.bullets[i].offsetTop &&
-                        this.cat.y <= this.bullets[i].offsetTop + this.bullets[i].offsetHeight
-                    ) {
-                        console.log({offsetLeft: bullets[0].offsetLeft, offsetTop: bullets[0].offsetTop, offsetHeight: bullets[0].offsetHeight, offsetWidth: bullets[0].offsetWidth})
-                        this.cat.direction = 'none'
-                    };
-                    break;
-                case 'down':
-                    if (
-                        this.cat.y + this.cat.height + this.cat.speed >= this.bullets[i].offsetTop &&
-                        this.cat.y <= this.bullets[i].offsetHeight + this.bullets[i].offsetTop &&
-                        this.cat.x <= this.bullets[i].offsetLeft + this.bullets[i].offsetWidth &&
-                        this.cat.x + this.cat.width >= this.bullets[i].offsetLeft
-                    ) {
-                        //console.log(this.bullets[i].innerHTML)
-                        this.cat.direction = 'none'
-                    };
-                    break;
-                case 'left':
-                    if (
-                        this.cat.x - this.cat.speed <= this.bullets[i].offsetLeft + this.bullets[i].offsetWidth &&
-                        this.cat.x + this.cat.width >= this.bullets[i].offsetLeft &&
-                        this.cat.y + this.cat.height >= this.bullets[i].offsetTop &&
-                        this.cat.y <= this.bullets[i].offsetTop + this.bullets[i].offsetHeight
-                    ) {
-                        //console.log(this.bullets[i].innerHTML)
-                        this.cat.direction = 'none'
-                    };
-                    break;
-                case 'up':
-                    if (
-                        this.cat.y - this.cat.speed <= this.bullets[i].offsetTop + this.bullets[i].offsetHeight &&
-                        this.cat.y + this.cat.height >= this.bullets[i].offsetTop &&
-                        this.cat.x <= this.bullets[i].offsetLeft + this.bullets[i].offsetWidth &&
-                        this.cat.x + this.cat.width >= this.bullets[i].offsetLeft
-
-                    ) {
-                        //console.log(this.bullets[i].innerHTML)
-                        this.cat.direction = 'none'
-                    };
-                    break;
+            if (this.tangle.counter == 0) {
+                let newScore = document.getElementById('div1n');
+                newScore.classList.remove('tanglesdiv');
+                this.tangle.counter++;
+                this.tangle.x = 20;
+                this.tangle.y = 30;
+            } else if (this.tangle.counter == 1) {
+                let newScore = document.getElementById('div2n');
+                newScore.classList.remove('tanglesdiv');
+                this.tangle.counter++;
+                this.tangle.x = 500;
+                this.tangle.y = 50;
             }
         }
-    }*/
+    }
+
+
+    this.bulletsCollisions = function () {
+        for (let i = 0; i < this.bullets.length; i++){
+            if (this.cat.x + this.cat.width >= this.bullets[i].x &&
+                this.cat.x <= this.bullets[i].x + this.bullets[i].width &&
+                this.cat.y + this.cat.height >= this.bullets[i].y &&
+                this.cat.y <= this.bullets[i].y + this.bullets[i].height) {
+                alert('Game Over')
+            }
+        }
+    }
+
+    this.dogsCollisions = function () {
+        for (let i = 0; i < this.dogs.length; i++){
+            if (this.cat.x + this.cat.width >= this.dogs[i].x &&
+                this.cat.x <= this.dogs[i].x + this.dogs[i].width &&
+                this.cat.y + this.cat.height >= this.dogs[i].y &&
+                this.cat.y <= this.dogs[i].y + this.dogs[i].height) {
+                    console.log('colisiondog')
+                alert('Game Over')
+            }
+        }
+    }
 
     this.loop = function () {
         game.wallsCollisions(this.cat)
-        //game.bulletsCollisions(this.bullet)
-        //console.log(game.bullets)
-        //console.log(game.dogs)
+        game.tanglesCollisions()
+        game.tangle.draw()
+        game.bulletsCollisions()
+        game.dogsCollisions()
+
         for (let i = 0; i < game.dogs.length; i++) {
             game.dogs[i].move()
             game.dogs[i].draw()
-            }
+        }
         for (let i = 0; i < game.bullets.length; i++) {
             game.bullets[i].move()
             if (game.cat.direction != 'none') {

@@ -124,6 +124,7 @@ function Game() {
     }
     //Colisiones ovillos (pescaditos)
     this.tanglesCollisions = function () {
+        var endwin = document.getElementById('win')
         if (this.cat.x + this.cat.width >= this.tangle.x &&
             this.cat.x <= this.tangle.x + this.tangle.width &&
             this.cat.y + this.cat.height >= this.tangle.y &&
@@ -145,7 +146,13 @@ function Game() {
                 newScore.classList.remove('tanglesdiv')
                 this.tangle.counter++
                 this.tangle.x = 20
-                this.tangle.y = 690
+                this.tangle.y = 550
+            } else if (this.tangle.counter == 3) {
+                let newScore = document.getElementById('div4n')
+                newScore.classList.remove('tanglesdiv')
+                this.tangle.counter++
+                endwin.classList.remove('h')
+                winEnd()
             }
         }
     }
@@ -157,8 +164,8 @@ function Game() {
                 this.cat.x <= this.bullets[i].x + this.bullets[i].width &&
                 this.cat.y + this.cat.height >= this.bullets[i].y &&
                 this.cat.y <= this.bullets[i].y + this.bullets[i].height) {
-                    lose.classList.remove('h')
-                    deadEnd()
+                    // lose.classList.remove('h')
+                    // deadEnd()
             }
         }
     }
@@ -170,9 +177,8 @@ function Game() {
                 this.cat.x <= this.dogs[i].x + this.dogs[i].width &&
                 this.cat.y + this.cat.height >= this.dogs[i].y &&
                 this.cat.y <= this.dogs[i].y + this.dogs[i].height) {
-                    lose.classList.remove('h')
-
-                    deadEnd()
+                    // lose.classList.remove('h')
+                    // deadEnd()
             }
         }
     }
@@ -208,56 +214,58 @@ function Game() {
             gameStart()
         })
     }
-    // function restartInit(){
-    //     var init
-    // }
-
+    
     //funcion pantalla win
     function winEnd(){
         var replaywin = document.getElementById('button_replay')
         var endwin = document.getElementById('win')
         replaywin.addEventListener('click', function(){
             endwin.classList.add('h')
-           preGame()
         })
     }
+    
 
+    function preGame() {
+        //Declaracion variable funcion
+        var start = document.getElementById('button_start')
+        var iniciar = document.getElementById('init')
+        var user = document.getElementById('username')
+        var enter = document.getElementById('button_enter')
+        //Event listener boton start init
+        start.addEventListener('click', function(){
+            iniciar.classList.add('h')
+            user.classList.remove('h')
+        })
+        //event listener para el boton enter en el username
+        enter.addEventListener('click', function(){
+            user.classList.add('h')
+            addUsername()
+        })
+    }
+    preGame()
+    
+    
+    //Poner en nombre del input en el div de name
+    function addUsername() {
+        var addName = document.getElementById('inputname').value
+        var putName = document.getElementById('name')
+        var playerName = document.createElement('p')
+        playerName.innerText = addName
+        putName.appendChild(playerName)
+    }
+    //Función para limpiar la pantalla de juego
+    // function clearGame (){
+    //     this.dogs = []
+    //     this.bullets = []
+
+    // }
 
 }
 
 var game = new Game()
 game.gameStart()
 //hacer evento del clic del boton 
-function preGame() {
-    //Declaracion variable funcion
-    var start = document.getElementById('button_start')
-    var iniciar = document.getElementById('init')
-    var user = document.getElementById('username')
-    var enter = document.getElementById('button_enter')
-    //Event listener boton start init
-    start.addEventListener('click', function(){
-        iniciar.classList.add('h')
-        user.classList.remove('h')
-    })
-    //event listener para el boton enter en el username
-    enter.addEventListener('click', function(){
-        user.classList.add('h')
-        addUsername()
-    })
-}
-preGame()
 
-
-
-
-//Poner en nombre del input en el div de name
-function addUsername() {
-    var addName = document.getElementById('inputname').value
-    var putName = document.getElementById('name')
-    var playerName = document.createElement('p')
-    playerName.innerText = addName
-    putName.appendChild(playerName)
-}
 //Deteccion de teclado:
 window.addEventListener('keydown', function (e) {
     switch (e.key) {

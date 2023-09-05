@@ -189,6 +189,7 @@ function Game() {
         for (let i = 0; i < game.bullets.length; i++) {
             game.bullets[i].move()
             if (game.cat.direction != 'none') {
+                game.cat.style()
                 game.cat.move()
                 game.cat.draw()
             }

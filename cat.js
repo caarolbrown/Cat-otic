@@ -48,6 +48,23 @@ function Cat(x, y) {
                 break
         }
     }
+   
+    this.style = function () {
+        switch (this.direction) {
+            case 'up':
+             this.sprite.style.backgroundImage = 'url(./source/img/Michi_Back_v2.png)' 
+                break
+            case 'left':
+                this.sprite.style.backgroundImage = 'url(./source/img/Michi_Left_v2.png)'
+                break
+            case 'down':
+                this.sprite.style.backgroundImage = 'url(./source/img/Michi_Frontal_v2.png)'
+                break
+            case 'right':
+                this.sprite.style.backgroundImage = 'url(./source/img/Michi_Right_v2.png)'
+                break
+        }
+    }
 }
 
 export { Cat }

@@ -20,31 +20,36 @@
     height: 50px;
     width: 250px;
 }
-.tanglesdiv{
+
+.tanglesdiv {
     display: none;
 }
-#div1n{
-    height: 40px;
-    width: 40px;
-    background-color: blueviolet;
-}
-#div2n{
-    height: 40px;
-    width: 40px;
-    background-color: blueviolet;
-}
-#div3n{
-    height: 40px;
-    width: 40px;
-    background-color: blueviolet;
-}
-#div4n{
+
+#div1n {
     height: 40px;
     width: 40px;
     background-color: blueviolet;
 }
 
-#container{
+#div2n {
+    height: 40px;
+    width: 40px;
+    background-color: blueviolet;
+}
+
+#div3n {
+    height: 40px;
+    width: 40px;
+    background-color: blueviolet;
+}
+
+#div4n {
+    height: 40px;
+    width: 40px;
+    background-color: blueviolet;
+}
+
+#container {
     position: relative;
     margin: 0 auto;
     display: flex;
@@ -62,6 +67,7 @@
     position: absolute;
     border: 4px solid;
     z-index: 0;
+    background-image: url(./source/img/floor1.png);
 }
 
 #init {
@@ -74,32 +80,21 @@
     position: absolute;
     z-index: 1;
 }
-.h{
+
+.h {
     display: none;
 }
 
-#buttons{
+#buttons {
     margin-top: 310px;
     margin-left: 220px;
 }
 
-.button{
+.button {
     height: 50px;
     width: 185px;
     margin-bottom: 20px;
     cursor: pointer;
-}
-
-#cat {
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    /*background-color: chocolate;*/
-    background-image: url(./source/img/michi\ juego.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    border: solid 1px black;
-    background-position: center;
 }
 
 .dog {
@@ -173,15 +168,23 @@
     height: 70px;
     width: 60px;
     position: absolute;
-    background-color: chocolate;
-    background-image: url(./source/img/michi\ juego.png);
+    background-image: url(./source/img/michi\ juego.png); 
     background-repeat: no-repeat;
-    background-size: contain;
-    border: solid 1px black;
-    background-position: center;
+    
+    animation: move-right-animation 1s steps(3) infinite;
 }
 
-.tangle{
+@keyframes move-right-animation {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: -195px; 
+    }
+}
+
+
+.tangle {
     height: 50px;
     width: 50px;
     position: absolute;
@@ -197,14 +200,18 @@
 
 .walls {
     color: white;
-    background-color:black;
+    background-color: black;
     height: 70px;
     width: 100px;
+    background-image: url(./source/img/wall.png);
+    background-repeat:
+
 }
 
 #wall1 {
     top: 280px;
     position: absolute;
+
 }
 
 #wall2 {

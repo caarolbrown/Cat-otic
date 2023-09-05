@@ -91,7 +91,7 @@
 .button_i{
     height: 50px;
     width: 185px;
-    margin-bottom: 20px;
+    margin-top: 20px;
     cursor: pointer;
 }
 #username {
@@ -124,6 +124,47 @@
     cursor: pointer;
 }
 
+#lose{
+    background-image: url(./source/img/game_over.png);
+    height: 700px;
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 35px;
+    border: 4px solid;
+    position: absolute;
+    z-index: 1;
+}
+
+#buttons_l{
+    margin-top: 305px;
+    margin-left: 662px;
+}
+
+.button_l{
+    margin-bottom: 12px;
+    height: 50px;
+    width: 185px;
+    cursor: pointer;
+}
+
+#win{
+    background-image: url(./source/img/you_win.png);
+    height: 700px;
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 35px;
+    border: 4px solid;
+    position: absolute;
+    z-index: 1;
+}
+
+.button_w {
+    margin-top: 377px;
+    margin-left: 508px;
+    height: 50px;
+    width: 185px;
+    cursor: pointer;
+}
 
 #cat {
     height: 50px;
@@ -202,18 +243,6 @@
     background-image: url(./source/img/pecesin.png);
     background-repeat: no-repeat;
     background-size: contain;
-}
-
-#cat {
-    height: 70px;
-    width: 60px;
-    position: absolute;
-    background-color: chocolate;
-    background-image: url(./source/img/michi\ juego.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    border: solid 1px black;
-    background-position: center;
 }
 
 .tangle{

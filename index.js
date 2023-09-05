@@ -157,7 +157,8 @@ function Game() {
                 this.cat.x <= this.bullets[i].x + this.bullets[i].width &&
                 this.cat.y + this.cat.height >= this.bullets[i].y &&
                 this.cat.y <= this.bullets[i].y + this.bullets[i].height) {
-                //alert('Game Over')
+                    lose.classList.remove('h')
+                    deadEnd()
             }
         }
     }
@@ -169,7 +170,9 @@ function Game() {
                 this.cat.x <= this.dogs[i].x + this.dogs[i].width &&
                 this.cat.y + this.cat.height >= this.dogs[i].y &&
                 this.cat.y <= this.dogs[i].y + this.dogs[i].height) {
-                //alert('Game Over')
+                    lose.classList.remove('h')
+
+                    deadEnd()
             }
         }
     }
@@ -195,26 +198,57 @@ function Game() {
             game.cat.direction = 'none'
         }
     }
+    //funcion pantalla game over
+    function deadEnd(){
+        var replay = document.getElementById('button_restart')
+        var end = document.getElementById('lose')
+        //Event listener boton replay
+        replay.addEventListener('click', function(){
+            end.classList.add('h')
+            gameStart()
+        })
+    }
+    // function restartInit(){
+    //     var init
+    // }
+
+    //funcion pantalla win
+    function winEnd(){
+        var replaywin = document.getElementById('button_replay')
+        var endwin = document.getElementById('win')
+        replaywin.addEventListener('click', function(){
+            endwin.classList.add('h')
+           preGame()
+        })
+    }
+
+
 }
 
 var game = new Game()
 game.gameStart()
 //hacer evento del clic del boton 
 function preGame() {
+    //Declaracion variable funcion
     var start = document.getElementById('button_start')
     var iniciar = document.getElementById('init')
     var user = document.getElementById('username')
     var enter = document.getElementById('button_enter')
+    //Event listener boton start init
     start.addEventListener('click', function(){
         iniciar.classList.add('h')
         user.classList.remove('h')
     })
+    //event listener para el boton enter en el username
     enter.addEventListener('click', function(){
         user.classList.add('h')
         addUsername()
     })
 }
 preGame()
+
+
+
 
 //Poner en nombre del input en el div de name
 function addUsername() {

@@ -203,11 +203,27 @@ game.gameStart()
 function preGame() {
     var start = document.getElementById('button_start')
     var iniciar = document.getElementById('init')
+    var user = document.getElementById('username')
+    var enter = document.getElementById('button_enter')
     start.addEventListener('click', function(){
-        iniciar.classList.add('h');
+        iniciar.classList.add('h')
+        user.classList.remove('h')
+    })
+    enter.addEventListener('click', function(){
+        user.classList.add('h')
+        addUsername()
     })
 }
 preGame()
+
+//Poner en nombre del input en el div de name
+function addUsername() {
+    var addName = document.getElementById('inputname').value
+    var putName = document.getElementById('name')
+    var playerName = document.createElement('p')
+    playerName.innerText = addName
+    putName.appendChild(playerName)
+}
 //Deteccion de teclado:
 window.addEventListener('keydown', function (e) {
     switch (e.key) {

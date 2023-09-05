@@ -177,8 +177,8 @@ function Game() {
                 this.cat.x <= this.dogs[i].x + this.dogs[i].width &&
                 this.cat.y + this.cat.height >= this.dogs[i].y &&
                 this.cat.y <= this.dogs[i].y + this.dogs[i].height) {
-                    // lose.classList.remove('h')
-                    // deadEnd()
+                    lose.classList.remove('h')
+                    deadEnd()
             }
         }
     }
@@ -211,15 +211,17 @@ function Game() {
         //Event listener boton replay
         replay.addEventListener('click', function(){
             end.classList.add('h')
-            gameStart()
+            clearGame()
+            
         })
     }
-    
+
     //funcion pantalla win
     function winEnd(){
         var replaywin = document.getElementById('button_replay')
         var endwin = document.getElementById('win')
         replaywin.addEventListener('click', function(){
+            clearGame()
             endwin.classList.add('h')
         })
     }
@@ -254,11 +256,17 @@ function Game() {
         putName.appendChild(playerName)
     }
     //Función para limpiar la pantalla de juego
-    // function clearGame (){
-    //     this.dogs = []
-    //     this.bullets = []
-
-    // }
+    function clearGame (){
+        this.dogs = []
+        this.bullets = []
+        clearInterval(timerId)
+        replay.removeEventListener()
+        replaywin.removeEventListener()
+        start.removeEventListener()
+        enter.removeEventListener()
+        this.tangle.counter == 0
+        gameStart()
+    }
 
 }
 

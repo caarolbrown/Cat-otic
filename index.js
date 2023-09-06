@@ -183,6 +183,7 @@ function Game() {
         game.dogsCollisions()
 
         for (let i = 0; i < game.dogs.length; i++) {
+            game.dogs[i].style()
             game.dogs[i].move()
             game.dogs[i].draw()
         }

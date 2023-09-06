@@ -6,47 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <script src="./index.js" type="module" defer></script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');</style>
     <title>Cat-otic</title>
 </head>
 
-<body>
-    
+<body id="sky">
     <div class='info'>
-        <div id='tangles' class='box'>
+        <div id='tangles' class='box'> SCORE:
             <div class='tanglesdiv' id='div1n'></div>
             <div class='tanglesdiv' id='div2n'></div>
             <div class='tanglesdiv' id='div3n'></div>
             <div class='tanglesdiv' id="div4n"></div>
         </div>
 
-        <div id='name' class='box'>Name</div>
+        <div id='name' class='box'>PLAYER:</div>
         <div id='lives' class='box'>LEVEL 999</div>
     </div>
     <div id="container">
         <div id='init'>
-            <div id="buttons">
-                <div class="button" id="button_start"></div>
-                <div class="button" id="button_option"></div>
+            <div id="buttons_i">
+                <div class="button_i" id="button_start"></div>
+                <div class="button_i" id="button_option"></div>
+                
             </div>
             
         </div>
-        <div id='win'>
-    
-        </div>
-        <div id="lose">
+        <div id="username" class="h">
+            <div id="login">
+                <input type="text" id="inputname" maxlength="10">
+                <div class="button_u" id="button_enter"></div>
+            </div>
             
         </div>
+        <div id='win' class="h">
+                <div class="button_w" id="button_replay"></div>
+        </div>
+        <div id="lose" class="h">
+            <div id="buttons_l">
+                <div class="button_l" id="button_restart"></div>
+            </div>
+        </div> 
     
         <div id='main-board'>
-            <div id='wall1' class='walls'></div>
-            <div id='wall2' class='walls'></div>
-            <div id='wall3' class='walls'></div>
-            <div id='wall4' class='walls'></div>
-            <div id='wall5' class='walls'></div>
-            <div id='wall6' class='walls'></div>
-            <div id='wall7' class='walls'></div>
-            <div id='wall8' class='walls'></div>
-            <div id='wall9' class='walls'></div>
+            <div id='wall1' class='walls'>1</div>
+            <div id='wall2' class='walls'>2</div>
+            <div id='wall3' class='walls'>3</div>
+            <div id='wall4' class='walls'>4</div>
+            <div id='wall5' class='walls'>5</div>
+            <div id='wall6' class='walls'>6</div>
+            <div id='wall7' class='walls'>7</div>
+            <div id='wall8' class='walls'>8</div>
+            <div id='wall9' class='walls'>9</div>
     
         </div>
     

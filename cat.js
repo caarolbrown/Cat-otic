@@ -1,8 +1,6 @@
-
 //Funcion constructora gato:
 
 function Cat(x, y) {
-    var self = this
     this.x = x
     this.y = y
     this.direction = 'none'
@@ -45,6 +43,23 @@ function Cat(x, y) {
                 } else {
                     this.x += this.speed
                 }
+                break
+        }
+    }
+   
+    this.style = function () {
+        switch (this.direction) {
+            case 'up':
+             this.sprite.style.backgroundImage = 'url(./source/img/Michi_Back_Fixed.png)' 
+                break
+            case 'left':
+                this.sprite.style.backgroundImage = 'url(./source/img/Michi_Left_Fixed.png)'
+                break
+            case 'down':
+                this.sprite.style.backgroundImage = 'url(./source/img/Michi_Frontal_Fixed.png)'
+                break
+            case 'right':
+                this.sprite.style.backgroundImage = 'url(./source/img/Michi_Right_Fixed.png)'
                 break
         }
     }

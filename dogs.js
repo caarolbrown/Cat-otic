@@ -61,6 +61,23 @@ function Dog(x, y, moveType, posInit, posFin, speed) {
             }
         }
     }
+
+    this.style = function () {
+        switch (this.direction) {
+            case 'up':
+             this.sprite.style.backgroundImage = 'url(./source/img/Perro_Back_Fixed.png)' 
+                break
+            case 'left':
+                this.sprite.style.backgroundImage = 'url(./source/img/Perro_Left_Fixed.png)'
+                break
+            case 'down':
+                this.sprite.style.backgroundImage = 'url(./source/img/Perro_Frontal_Fixed.png)'
+                break
+            case 'right':
+                this.sprite.style.backgroundImage = 'url(./source/img/Perro_Right_Fixed.png)'
+                break
+        }
+    }
 }
 
 export { Dog }

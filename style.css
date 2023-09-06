@@ -181,28 +181,13 @@
     cursor: pointer;
 }
 
-#cat {
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    /*background-color: chocolate;*/
-    background-image: url(./source/img/michi\ juego.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    /* border: solid 1px black; */
-    background-position: center;
-}
-
-
 .dog {
     height: 80px;
     width: 70px;
     position: absolute;
     background-image: url(./source/img/Perro_Frontal_Fixed.png);
     background-repeat: no-repeat;
-
-
-    background-size: contain;
+    /*background-size: contain;*/
     /* border: solid 1px black; */
     background-position: center;
     animation: move-right-animation 1s steps(3) infinite;
@@ -327,6 +312,7 @@
     left: 200px;
     position: absolute;
     background-image: url(./source/img/H1.png);
+    background-size: cover;
     background-repeat: no-repeat;
     
 

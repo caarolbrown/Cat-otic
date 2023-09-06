@@ -4,7 +4,7 @@ function Cat(x, y) {
     this.x = x
     this.y = y
     this.direction = 'none'
-    this.speed = 10
+    this.speed = 20
     this.height = 50
     this.width = 35
     this.sprite

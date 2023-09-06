@@ -3,8 +3,8 @@ function Dog(x, y, moveType, posInit, posFin, speed) {
     var self = this
     this.x = x
     this.y = y
-    this.height = 70
-    this.width = 45
+    this.height = 80
+    this.width = 70
     this.sprite
     this.speed = speed
     this.direction = (moveType == 'horizontal') ? 'right' : 'down'

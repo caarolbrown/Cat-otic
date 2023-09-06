@@ -1,22 +1,34 @@
+*{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 25px;
+}
+
 .info {
-    background-color: grey;
+    color: #F3E835;
+    background-image: url(./source/img/nubecita.png);
+    background-repeat: no-repeat;
+    background-size: contain;
     display: flex;
     flex-direction: row;
-    height: 100px;
+    height: 200px;
     width: 1200px;
     margin: 0 auto;
     justify-content: space-around;
     align-items: center;
-    margin-top: 40px;
-    border: 4px solid;
+    margin-bottom: 10px;
+    /* border: 4px solid; */
 }
 
+#sky{
+    background-image: url(./source/img/pixel-art-stars-clouds-moon-wallpaper-preview.jpg);
+}
 .box {
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    border: solid pink;
+    /* border: solid white; */
     height: 50px;
     width: 250px;
 }
@@ -28,25 +40,25 @@
 #div1n {
     height: 40px;
     width: 40px;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 }
 
 #div2n {
     height: 40px;
     width: 40px;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 }
 
 #div3n {
     height: 40px;
     width: 40px;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 }
 
 #div4n {
     height: 40px;
     width: 40px;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 }
 
 #container {
@@ -63,9 +75,8 @@
     height: 700px;
     width: 1200px;
     margin: 0 auto;
-    margin-top: 35px;
     position: absolute;
-    border: 4px solid;
+    border: 4px solid ;
     z-index: 0;
     background-image: url(./source/img/floor1.png);
     background-size: 70px
@@ -76,8 +87,7 @@
     height: 700px;
     width: 1200px;
     margin: 0 auto;
-    margin-top: 35px;
-    border: 4px solid;
+    border: 4px solid ;
     position: absolute;
     z-index: 1;
 }
@@ -86,17 +96,103 @@
     display: none;
 }
 
-#buttons {
+
+#buttons_i{
     margin-top: 310px;
     margin-left: 220px;
 }
 
-.button {
+
+
+
+.button_i{
     height: 50px;
     width: 185px;
-    margin-bottom: 20px;
+    margin-top: 20px;
     cursor: pointer;
 }
+#username {
+    background-image: url(./source/img/username.png);
+    height: 700px;
+    width: 1200px;
+    margin: 0 auto;
+    border: 4px solid ;
+    position: absolute;
+    z-index: 1;
+}
+
+#login{
+    margin-top: 325px;
+    margin-left: 195px;
+}
+
+#inputname{
+    height: 30px;
+    width: 220px;
+    text-align: center;
+}
+
+.button_u{
+    margin-top: 20px;
+    margin-left: 25px;
+    height: 50px;
+    width: 185px;
+    cursor: pointer;
+}
+
+#lose{
+    background-image: url(./source/img/game_over.png);
+    height: 700px;
+    width: 1200px;
+    margin: 0 auto;
+    border: 4px solid ;
+    position: absolute;
+    z-index: 1;
+}
+
+#buttons_l{
+    margin-top: 305px;
+    margin-left: 662px;
+}
+
+.button_l{
+    margin-bottom: 12px;
+    height: 50px;
+    width: 185px;
+    cursor: pointer;
+}
+
+#win{
+    background-image: url(./source/img/you_win.png);
+    height: 700px;
+    width: 1200px;
+    margin: 0 auto;
+    border: 4px solid;
+    position: absolute;
+    z-index: 1;
+}
+
+.button_w {
+    margin-top: 377px;
+    margin-left: 508px;
+
+    height: 50px;
+    width: 185px;
+    cursor: pointer;
+}
+
+#cat {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    /*background-color: chocolate;*/
+    background-image: url(./source/img/michi\ juego.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* border: solid 1px black; */
+    background-position: center;
+}
+
 
 .dog {
     height: 80px;
@@ -104,6 +200,10 @@
     position: absolute;
     background-image: url(./source/img/Perro_Frontal_Fixed.png);
     background-repeat: no-repeat;
+
+
+    background-size: contain;
+    /* border: solid 1px black; */
     background-position: center;
     animation: move-right-animation 1s steps(3) infinite;
 }
@@ -173,6 +273,7 @@
     background-size: contain;
 }
 
+
 #cat {
     height: 70px;
     width: 60px;
@@ -192,19 +293,18 @@
     }
 }
 
-
-.tangle {
+.tangle{
     height: 50px;
     width: 50px;
     position: absolute;
-    background-color: rgb(10, 81, 105);
-}
+     /* background-color: rgb(10, 81, 105); */
+} 
 
 .bullet {
-    height: 10px;
-    width: 10px;
+    height: 20px;
+    width: 20px;
     position: absolute;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 .walls {

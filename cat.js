@@ -1,8 +1,6 @@
-
 //Funcion constructora gato:
 
 function Cat(x, y) {
-    var self = this
     this.x = x
     this.y = y
     this.direction = 'none'

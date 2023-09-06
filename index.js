@@ -15,6 +15,10 @@ function Game() {
     this.bullets = []
     this.tangle
 
+    var timerId;
+
+    var replay, replaywin, start, enter;
+
     //Creacion gato
     this.insertCat = function () {
         let newCat = document.createElement('div')
@@ -24,6 +28,7 @@ function Game() {
         this.board.appendChild(newCat);
         this.cat.sprite = document.getElementById('cat')
     }
+
     //Creacion perro
     this.insertDog = function (x, y, moveType, posInit, posFin, speed) {
         let dog = new Dog(x, y, moveType, posInit, posFin, speed)
@@ -122,8 +127,10 @@ function Game() {
             }
         }
     }
+
     //Colisiones ovillos (pescaditos)
     this.tanglesCollisions = function () {
+        var endwin = document.getElementById('win')
         if (this.cat.x + this.cat.width >= this.tangle.x &&
             this.cat.x <= this.tangle.x + this.tangle.width &&
             this.cat.y + this.cat.height >= this.tangle.y &&
@@ -145,7 +152,13 @@ function Game() {
                 newScore.classList.remove('tanglesdiv')
                 this.tangle.counter++
                 this.tangle.x = 20
-                this.tangle.y = 690
+                this.tangle.y = 550
+            } else if (this.tangle.counter == 3) {
+                let newScore = document.getElementById('div4n')
+                newScore.classList.remove('tanglesdiv')
+                this.tangle.counter++
+                endwin.classList.remove('h')
+                winEnd()
             }
         }
     }
@@ -157,7 +170,8 @@ function Game() {
                 this.cat.x <= this.bullets[i].x + this.bullets[i].width &&
                 this.cat.y + this.cat.height >= this.bullets[i].y &&
                 this.cat.y <= this.bullets[i].y + this.bullets[i].height) {
-                //alert('Game Over')
+                    // lose.classList.remove('h')
+                    // deadEnd()
             }
         }
     }
@@ -169,7 +183,8 @@ function Game() {
                 this.cat.x <= this.dogs[i].x + this.dogs[i].width &&
                 this.cat.y + this.cat.height >= this.dogs[i].y &&
                 this.cat.y <= this.dogs[i].y + this.dogs[i].height) {
-                //alert('Game Over')
+                    // lose.classList.remove('h')
+                    // deadEnd()
             }
         }
     }
@@ -197,19 +212,83 @@ function Game() {
             game.cat.direction = 'none'
         }
     }
+
+    //funcion pantalla game over
+    function deadEnd(){
+        var replay = document.getElementById('button_restart')
+        //var end = document.getElementById('lose')
+        //Event listener boton replay
+        replay.addEventListener('click', function(){
+            //end.classList.add('h')
+            game.clearGame()
+            
+        })
+    }
+
+    //funcion pantalla win
+    function winEnd(){
+        var replaywin = document.getElementById('button_replay')
+        //var endwin = document.getElementById('win')
+        replaywin.addEventListener('click', function(){
+            //endwin.classList.add('h')
+            game.clearGame()
+        })
+    }
+    
+
+    function preGame() {
+        //Declaracion variable funcion
+        var start = document.getElementById('button_start')
+        var iniciar = document.getElementById('init')
+        var user = document.getElementById('username')
+        var enter = document.getElementById('button_enter')
+        //Event listener boton start init
+        start.addEventListener('click', function(){
+            iniciar.classList.add('h')
+            user.classList.remove('h')
+        })
+        //event listener para el boton enter en el username
+        enter.addEventListener('click', function(){
+            user.classList.add('h')
+            addUsername()
+        })
+    }
+    preGame()
+    
+    
+    //Poner en nombre del input en el div de name
+    function addUsername() {
+        var addName = document.getElementById('inputname').value
+        var putName = document.getElementById('name')
+        var playerName = document.createElement('p')
+        playerName.innerText = addName
+        putName.appendChild(playerName)
+    }
+
+    //Función para limpiar la pantalla de juego
+    this.clearGame = function () {
+        location.reload() //reload página 
+        // for ( let i = 0; i<)
+        // this.dogs = []
+        // this.bullets = []
+        
+        // clearInterval(timerId)
+
+        // replay.removeEventListener('click', replayClick)
+        // replaywin.removeEventListener('click', replaywinClick)
+        // start.removeEventListener('click', startClick)
+        // enter.removeEventListener('click', enterClick)
+
+        // this.tangle.counter = 0
+
+        // game.gameStart()
+    };
+
 }
 
 var game = new Game()
 game.gameStart()
-//hacer evento del clic del boton 
-function preGame() {
-    var start = document.getElementById('button_start')
-    var iniciar = document.getElementById('init')
-    start.addEventListener('click', function(){
-        iniciar.classList.add('h');
-    })
-}
-preGame()
+
 //Deteccion de teclado:
 window.addEventListener('keydown', function (e) {
     switch (e.key) {

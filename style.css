@@ -32,31 +32,36 @@
     height: 50px;
     width: 250px;
 }
-.tanglesdiv{
+
+.tanglesdiv {
     display: none;
 }
-#div1n{
-    height: 40px;
-    width: 40px;
-    /* background-color: blueviolet; */
-}
-#div2n{
-    height: 40px;
-    width: 40px;
-    /* background-color: blueviolet; */
-}
-#div3n{
-    height: 40px;
-    width: 40px;
-    /* background-color: blueviolet; */
-}
-#div4n{
+
+#div1n {
     height: 40px;
     width: 40px;
     /* background-color: blueviolet; */
 }
 
-#container{
+#div2n {
+    height: 40px;
+    width: 40px;
+    /* background-color: blueviolet; */
+}
+
+#div3n {
+    height: 40px;
+    width: 40px;
+    /* background-color: blueviolet; */
+}
+
+#div4n {
+    height: 40px;
+    width: 40px;
+    /* background-color: blueviolet; */
+}
+
+#container {
     position: relative;
     margin: 0 auto;
     display: flex;
@@ -73,6 +78,8 @@
     position: absolute;
     border: 4px solid ;
     z-index: 0;
+    background-image: url(./source/img/floor1.png);
+    background-size: 70px
 }
 
 #init {
@@ -84,14 +91,19 @@
     position: absolute;
     z-index: 1;
 }
-.h{
+
+.h {
     display: none;
 }
+
 
 #buttons_i{
     margin-top: 310px;
     margin-left: 220px;
 }
+
+
+
 
 .button_i{
     height: 50px;
@@ -163,6 +175,7 @@
 .button_w {
     margin-top: 377px;
     margin-left: 508px;
+
     height: 50px;
     width: 185px;
     cursor: pointer;
@@ -180,15 +193,28 @@
     background-position: center;
 }
 
+
 .dog {
     height: 80px;
     width: 70px;
     position: absolute;
-    background-image: url(./source/img/perrito.png);
+    background-image: url(./source/img/Perro_Frontal_Fixed.png);
     background-repeat: no-repeat;
+
+
     background-size: contain;
     /* border: solid 1px black; */
     background-position: center;
+    animation: move-right-animation 1s steps(3) infinite;
+}
+
+@keyframes move-right-animation {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: -210px; 
+    }
 }
 
 .bullet {
@@ -247,6 +273,26 @@
     background-size: contain;
 }
 
+
+#cat {
+    height: 70px;
+    width: 60px;
+    position: absolute;
+    background-image: url(./source/img/Michi_Frontal_Fixed.png); 
+    background-repeat: no-repeat;
+    
+    animation: move-right-animation 0.5s steps(3) infinite;
+}
+
+@keyframes move-right-animation {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: -210px; 
+    }
+}
+
 .tangle{
     height: 50px;
     width: 50px;
@@ -263,20 +309,27 @@
 
 .walls {
     color: white;
-    background-color:black;
+    background-color: black;
     height: 70px;
     width: 100px;
+    background-image: url(./source/img/wall.png);
+    
 }
 
 #wall1 {
     top: 280px;
     position: absolute;
+
 }
 
 #wall2 {
     top: 210px;
     left: 200px;
     position: absolute;
+    background-image: url(./source/img/H1.png);
+    background-repeat: no-repeat;
+    
+
 }
 
 #wall3 {

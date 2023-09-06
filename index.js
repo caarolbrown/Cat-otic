@@ -198,12 +198,14 @@ function Game() {
         game.dogsCollisions()
 
         for (let i = 0; i < game.dogs.length; i++) {
+            game.dogs[i].style()
             game.dogs[i].move()
             game.dogs[i].draw()
         }
         for (let i = 0; i < game.bullets.length; i++) {
             game.bullets[i].move()
             if (game.cat.direction != 'none') {
+                game.cat.style()
                 game.cat.move()
                 game.cat.draw()
             }

@@ -15,6 +15,10 @@ function Game() {
     this.bullets = []
     this.tangle
 
+    var timerId;
+
+    var replay, replaywin, start, enter;
+
     //Creacion gato
     this.insertCat = function () {
         let newCat = document.createElement('div')
@@ -24,6 +28,7 @@ function Game() {
         this.board.appendChild(newCat);
         this.cat.sprite = document.getElementById('cat')
     }
+
     //Creacion perro
     this.insertDog = function (x, y, moveType, posInit, posFin, speed) {
         let dog = new Dog(x, y, moveType, posInit, posFin, speed)
@@ -122,6 +127,7 @@ function Game() {
             }
         }
     }
+
     //Colisiones ovillos (pescaditos)
     this.tanglesCollisions = function () {
         var endwin = document.getElementById('win')
@@ -204,14 +210,15 @@ function Game() {
             game.cat.direction = 'none'
         }
     }
+
     //funcion pantalla game over
     function deadEnd(){
         var replay = document.getElementById('button_restart')
-        var end = document.getElementById('lose')
+        //var end = document.getElementById('lose')
         //Event listener boton replay
         replay.addEventListener('click', function(){
-            end.classList.add('h')
-            clearGame()
+            //end.classList.add('h')
+            game.clearGame()
             
         })
     }
@@ -219,10 +226,10 @@ function Game() {
     //funcion pantalla win
     function winEnd(){
         var replaywin = document.getElementById('button_replay')
-        var endwin = document.getElementById('win')
+        //var endwin = document.getElementById('win')
         replaywin.addEventListener('click', function(){
-            clearGame()
-            endwin.classList.add('h')
+            //endwin.classList.add('h')
+            game.clearGame()
         })
     }
     
@@ -255,24 +262,30 @@ function Game() {
         playerName.innerText = addName
         putName.appendChild(playerName)
     }
+
     //Función para limpiar la pantalla de juego
-    function clearGame (){
-        this.dogs = []
-        this.bullets = []
-        clearInterval(timerId)
-        replay.removeEventListener()
-        replaywin.removeEventListener()
-        start.removeEventListener()
-        enter.removeEventListener()
-        this.tangle.counter == 0
-        gameStart()
-    }
+    this.clearGame = function () {
+        location.reload() //reload página 
+        // for ( let i = 0; i<)
+        // this.dogs = []
+        // this.bullets = []
+        
+        // clearInterval(timerId)
+
+        // replay.removeEventListener('click', replayClick)
+        // replaywin.removeEventListener('click', replaywinClick)
+        // start.removeEventListener('click', startClick)
+        // enter.removeEventListener('click', enterClick)
+
+        // this.tangle.counter = 0
+
+        // game.gameStart()
+    };
 
 }
 
 var game = new Game()
 game.gameStart()
-//hacer evento del clic del boton 
 
 //Deteccion de teclado:
 window.addEventListener('keydown', function (e) {

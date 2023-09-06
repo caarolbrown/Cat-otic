@@ -183,8 +183,8 @@ function Game() {
                 this.cat.x <= this.dogs[i].x + this.dogs[i].width &&
                 this.cat.y + this.cat.height >= this.dogs[i].y &&
                 this.cat.y <= this.dogs[i].y + this.dogs[i].height) {
-                    lose.classList.remove('h')
-                    deadEnd()
+                    // lose.classList.remove('h')
+                    // deadEnd()
             }
         }
     }

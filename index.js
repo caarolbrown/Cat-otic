@@ -66,11 +66,11 @@ function Game() {
     //Funcion para iniciar juego
     this.gameStart = function () {
         this.insertCat()
-        this.insertDog(0, 470, 'horizontal', 0, 300, 1)
-        this.insertDog(420, 210, 'horizontal', 420, 800, 2)
-        this.insertDog(900, 0, 'vertical', 0, 280, 2)
+        this.insertDog(0, 470, 'horizontal', 0, 300, 0.5)
+        this.insertDog(420, 210, 'horizontal', 420, 800, 0.5)
+        this.insertDog(930, 0, 'vertical', 0, 400, 0.5)
         this.insertBullet(1045, 550, 'vertical', 480, 690, 1)
-        this.insertBullet(0, 50, 'horizontal', 0, 280, 1)
+        this.insertBullet(0, 30, 'horizontal', 0, 280, 1)
         this.insertBullet(0, 140, 'horizontal', 0, 280, 1)
         this.insertBullet(0, 375, 'horizontal', 0, 280, 1)
         this.insertBullet(400, 70, 'horizontal', 400, 680, 1)
@@ -165,26 +165,36 @@ function Game() {
 
     //Colisiones balas
     this.bulletsCollisions = function () {
+        var audio = document.getElementById('audio')
+        var crying = document.getElementById('audio_crying')
         for (let i = 0; i < this.bullets.length; i++) {
             if (this.cat.x + this.cat.width >= this.bullets[i].x &&
                 this.cat.x <= this.bullets[i].x + this.bullets[i].width &&
                 this.cat.y + this.cat.height >= this.bullets[i].y &&
                 this.cat.y <= this.bullets[i].y + this.bullets[i].height) {
-                    // lose.classList.remove('h')
-                    // deadEnd()
+                    lose.classList.remove('h')
+                    audio.pause()
+                    crying.volume = 0.3
+                    crying.play()
+                    deadEnd()
             }
         }
     }
 
     //Colisiones perros
     this.dogsCollisions = function () {
+        var audio = document.getElementById('audio')
+        var crying = document.getElementById('audio_crying')
         for (let i = 0; i < this.dogs.length; i++) {
             if (this.cat.x + this.cat.width >= this.dogs[i].x &&
                 this.cat.x <= this.dogs[i].x + this.dogs[i].width &&
                 this.cat.y + this.cat.height >= this.dogs[i].y &&
                 this.cat.y <= this.dogs[i].y + this.dogs[i].height) {
-                    // lose.classList.remove('h')
-                    // deadEnd()
+                    lose.classList.remove('h')
+                    audio.pause()
+                    crying.volume = 0.3
+                    crying.play()
+                    deadEnd()
             }
         }
     }
@@ -238,6 +248,7 @@ function Game() {
 
     function preGame() {
         //Declaracion variable funcion
+        var audio = document.getElementById('audio')
         var start = document.getElementById('button_start')
         var iniciar = document.getElementById('init')
         var user = document.getElementById('username')
@@ -246,6 +257,8 @@ function Game() {
         start.addEventListener('click', function(){
             iniciar.classList.add('h')
             user.classList.remove('h')
+            audio.volume = 0.3
+            audio.play();
         })
         //event listener para el boton enter en el username
         enter.addEventListener('click', function(){

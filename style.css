@@ -22,6 +22,7 @@
 #sky{
     background-image: url(./source/img/pixel-art-stars-clouds-moon-wallpaper-preview.jpg);
 }
+
 .box {
     margin-top: 100px;
     display: flex;
@@ -255,6 +256,12 @@
     background-size: contain;
 }
 
+#audio{
+    display: none;
+}
+#audio_crying{
+    display: none;
+}
 
 #cat {
     height: 70px;
@@ -262,7 +269,6 @@
     position: absolute;
     background-image: url(./source/img/Michi_Frontal_Fixed.png); 
     background-repeat: no-repeat;
-    
     animation: move-right-animation 0.5s steps(3) infinite;
 }
 
@@ -295,24 +301,17 @@
     height: 70px;
     width: 100px;
     background-image: url(./source/img/wall.png);
-    
 }
 
 #wall1 {
     top: 280px;
     position: absolute;
-
 }
 
 #wall2 {
     top: 210px;
     left: 200px;
     position: absolute;
-    background-image: url(./source/img/H1.png);
-    background-size: cover ;
-    background-repeat: no-repeat;
-    
-
 }
 
 #wall3 {

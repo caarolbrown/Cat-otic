@@ -12,7 +12,6 @@ function Dog(x, y, moveType, posInit, posFin, speed) {
     this.posInit = posInit
     this.posFin = posFin
 
-
     this.draw = function () {
         this.sprite.style.left = this.x + 'px'
         this.sprite.style.top = this.y + 'px'

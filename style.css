@@ -22,6 +22,7 @@
 #sky{
     background-image: url(./source/img/pixel-art-stars-clouds-moon-wallpaper-preview.jpg);
 }
+
 .box {
     margin-top: 100px;
     display: flex;
@@ -102,15 +103,13 @@
     margin-left: 220px;
 }
 
-
-
-
 .button_i{
     height: 50px;
     width: 185px;
     margin-top: 20px;
     cursor: pointer;
 }
+
 #username {
     background-image: url(./source/img/username.png);
     height: 700px;
@@ -181,28 +180,12 @@
     cursor: pointer;
 }
 
-#cat {
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    /*background-color: chocolate;*/
-    background-image: url(./source/img/michi\ juego.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    /* border: solid 1px black; */
-    background-position: center;
-}
-
-
 .dog {
     height: 80px;
     width: 70px;
     position: absolute;
     background-image: url(./source/img/Perro_Frontal_Fixed.png);
     background-repeat: no-repeat;
-
-
-    background-size: contain;
     /* border: solid 1px black; */
     background-position: center;
     animation: move-right-animation 1s steps(3) infinite;
@@ -273,6 +256,12 @@
     background-size: contain;
 }
 
+#audio{
+    display: none;
+}
+#audio_crying{
+    display: none;
+}
 
 #cat {
     height: 70px;
@@ -280,7 +269,6 @@
     position: absolute;
     background-image: url(./source/img/Michi_Frontal_Fixed.png); 
     background-repeat: no-repeat;
-    
     animation: move-right-animation 0.5s steps(3) infinite;
 }
 
@@ -313,23 +301,17 @@
     height: 70px;
     width: 100px;
     background-image: url(./source/img/wall.png);
-    
 }
 
 #wall1 {
     top: 280px;
     position: absolute;
-
 }
 
 #wall2 {
     top: 210px;
     left: 200px;
     position: absolute;
-    background-image: url(./source/img/H1.png);
-    background-repeat: no-repeat;
-    
-
 }
 
 #wall3 {

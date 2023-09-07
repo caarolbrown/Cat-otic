@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./index.js" type="module" defer></script>
     <style>@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');</style>
+    <audio id="audio" controls>
+        <source type="audio/mp3" src="./source/music/init_music.mp3" >
+    </audio>
+    <audio id="audio_crying" controls>
+        <source type="audio/mp3" src="./source/music/triste_music.mp3">
+    </audio>
+    <link rel="shortcut icon" href="./source/img/cat_icon.png">
     <title>Cat-otic</title>
 </head>
 
@@ -35,8 +42,7 @@
             <div id="login">
                 <input type="text" id="inputname" maxlength="10">
                 <div class="button_u" id="button_enter"></div>
-            </div>
-            
+            </div>  
         </div>
         <div id='win' class="h">
                 <div class="button_w" id="button_replay"></div>
@@ -48,16 +54,15 @@
         </div> 
     
         <div id='main-board'>
-            <div id='wall1' class='walls'>1</div>
-            <div id='wall2' class='walls'>2</div>
-            <div id='wall3' class='walls'>3</div>
-            <div id='wall4' class='walls'>4</div>
-            <div id='wall5' class='walls'>5</div>
-            <div id='wall6' class='walls'>6</div>
-            <div id='wall7' class='walls'>7</div>
-            <div id='wall8' class='walls'>8</div>
-            <div id='wall9' class='walls'>9</div>
-    
+            <div id='wall1' class='walls'></div>
+            <div id='wall2' class='walls'></div>
+            <div id='wall3' class='walls'></div>
+            <div id='wall4' class='walls'></div>
+            <div id='wall5' class='walls'></div>
+            <div id='wall6' class='walls'></div>
+            <div id='wall7' class='walls'></div>
+            <div id='wall8' class='walls'></div>
+            <div id='wall9' class='walls'></div>
         </div>
     
     </div>

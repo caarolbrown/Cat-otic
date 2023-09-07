@@ -174,7 +174,7 @@ function Game() {
                 this.cat.y <= this.bullets[i].y + this.bullets[i].height) {
                     lose.classList.remove('h')
                     audio.pause()
-                    crying.volume = 0.3
+                    crying.volume = 0.5
                     crying.play()
                     deadEnd()
             }
@@ -192,7 +192,7 @@ function Game() {
                 this.cat.y <= this.dogs[i].y + this.dogs[i].height) {
                     lose.classList.remove('h')
                     audio.pause()
-                    crying.volume = 0.3
+                    crying.volume = 0.5
                     crying.play()
                     deadEnd()
             }
@@ -257,7 +257,7 @@ function Game() {
         start.addEventListener('click', function(){
             iniciar.classList.add('h')
             user.classList.remove('h')
-            audio.volume = 0.3
+            audio.volume = 0.5
             audio.play();
         })
         //event listener para el boton enter en el username
